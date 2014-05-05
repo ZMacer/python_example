@@ -22,7 +22,7 @@ print t.safe_substitute(d)
 
 t = string.Template('$var')
 print t.pattern.pattern
-
+##================================================================
 import re
 class MyTemplate(string.Template):
     delimiter = '{{'
@@ -40,3 +40,4 @@ t = MyTemplate('''
 ''')
 print 'matches:', t.pattern.findall(t.template)
 print 'substituted:',t.safe_substitute(var='replacement')
+##===============================================================
