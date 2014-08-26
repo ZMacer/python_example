@@ -1,0 +1,37 @@
+1、VirtualBox 安装Archlinux后安装awesome过程
+
+#pacman -S virtualbox-guest-utils
+#pacman -S xorg-server xorg-xinit
+
+控制窗口自动放大缩小
+{#su zlove
+$cp  /etc/skel/.xinitrc ~
+$nano .xinitrc
+add :: VBoxClient-all &
+
+su root
+cd ~}
+
+#pacman -S awesome
+
+#su zlove
+$cd ~
+$nano .xinitrc
+add :: exec awesome
+
+$mkdir ~/.config/awesome/
+$cp /etc/xdg/awesome/rc.lua ~/.config/awesome
+$startx
+ su root
+cd ~
+pacman -S xterm
+su zlove
+startx
+
+安装yaourt
+nano /etc/pacman.conf
+[archlinuxfr]
+#The Chinese Arch Linux communities packages.
+SigLevel = Optional TrustAllServer = http://repo-fr.archlinuxcn.org/$arch
+
+# pacman -Syu yaourt
